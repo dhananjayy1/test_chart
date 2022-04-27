@@ -1,0 +1,23 @@
+<h1>PrimeChart</h1>
+<p-chart  type="pie" [data]="data" [options]="chartOptions"  [width]="'100%'" [height]="'50%'" (onDataSelect)="selectData($event)"></p-chart>
+<!-- <button type="button" pButton (click)="update($event)"></button> -->
+
+
+<p-table [value]="cars" *ngIf="cars.length > 0" >
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Vin</th>
+          <th>Year</th>
+          <th>Brand</th>
+          <th>Color</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+      <tr>
+          <td>{{car.vin}}</td>
+          <td>{{car.year}}</td>
+          <td>{{car.brand}}</td>
+          <td>{{car.color}}</td>
+      </tr>
+  </ng-template>
+</p-table>
